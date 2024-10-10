@@ -1,0 +1,602 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Josefin Slab', serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Style the taskbar */
+.taskbar {
+    display: flex;
+    justify-content: flex-end; /* Align the taskbar to the right */
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+}
+
+.taskbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.taskbar-list li {
+    margin: 0 15px;
+}
+
+.taskbar-list a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.taskbar-list a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style for the dropdown button (only visible on mobile) */
+.dropdown-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .taskbar-list {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        background-color: #333;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .taskbar-list li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .dropdown-btn {
+        display: block; /* Show the dropdown button on mobile */
+    }
+
+    .taskbar-list.show {
+        display: flex; /* Show menu when dropdown button is clicked */
+    }
+
+    .taskbar-list a {
+        padding: 15px;
+    }
+}
+
+/* Main Content Section */
+.content {
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #3c8d99;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Main Menu Styling */
+.main-menu h2 {
+    font-size: 1.8rem;
+	text-align: center;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.main-menu li {
+    margin: 10px 0;
+}
+
+.main-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-menu li a:hover {
+    background-color: #3c8d99;
+    color: #121212;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .taskbar-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .taskbar-list li {
+        margin: 5px 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .main-menu li {
+        margin: 10px 0;
+    }
+
+    .main-menu li a {
+        font-size: 1rem;
+    }
+}
+
+/* .btn Styling */
+.btn {
+    background-color: #3c8d99; /* Button background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    padding: 12px 30px; /* Add padding */
+    font-size: 1rem; /* Font size */
+    font-family: 'Josefin Slab', serif; /* Font family */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor pointer on hover */
+    text-decoration: none; /* Remove underline for links */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #2c6f7f; /* Darken button on hover */
+    transform: translateY(-3px); /* Slightly lift button on hover */
+}
+
+/* Button Active Effect */
+.btn:active {
+    background-color: #2c6f7f; /* Darken when clicked */
+    transform: translateY(0); /* Remove lift on click */
+}
+
+/* Disabled Button */
+.btn:disabled {
+    background-color: #666; /* Dark grey for disabled state */
+    cursor: not-allowed; /* Disable cursor on disabled button */
+}
+
+/* Responsive Button (for smaller screens) */
+@media (max-width: 768px) {
+    .btn {
+        font-size: 0.9rem; /* Smaller font size on mobile */
+        padding: 10px 20px; /* Adjust padding */
+    }
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+    background-image: url('your-banner-image.jpg'); /* Add your banner image here */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.banner-btn {
+    background-color: #ff6347; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.banner-btn:hover {
+    background-color: #ff4500; /* Button hover color */
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Hide the loading screen initially */
+.loading-screen {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure it's on top of everything else */
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+/* Spinner animation */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Button Styling */
+#logout-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #2980b9;
+}
+
+/* General link styling */
+a {
+    color: #fff; /* Dark blue colour */
+    text-decoration: none; /* Removes the underline */
+    transition: color 0.3s ease; /* Smooth transition for colour changes */
+}
+
+/* Link hover effect */
+a:hover {
+    color: #003366; /* Same dark blue colour on hover */
+}
+
+/* Link visited state */
+a:visited {
+    color: #fff; /* Same dark blue colour for visited links */
+}
+
+/* Link active state (when clicked) */
+a:active {
+    color: #003366; /* Same dark blue colour when active */
+}
+
+/* This applies to the container you want to center */
+.container {
+    width: 80%;      /* Set width of your container (you can change this) */
+    max-width: 1200px; /* Optional: set a max width */
+    padding: 20px;   /* Optional: add some padding */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    background-color: #333; /* Optional: background for the container */
+    border-radius: 8px;  /* Optional: rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for a better effect */
+	margin: auto;
+}
+
+.login-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form element styles */
+form {
+    margin-bottom: 20px;
+}
+
+h2 {
+    
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styling */
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+h2 {
+    margin-top: 30px;
+    color: #FFFFFF;
+}
+
+select {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 1rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+    }
+}
+
+/* Table container */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Center the table on the page */
+}
+
+/* Table header */
+thead th {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd; /* Optional: Add border to header */
+}
+
+/* Table rows */
+tbody td {
+    padding: 10px;
+    text-align: left; /* Align text to the left for better readability */
+    font-size: 0.95rem;
+    color: #fff; /* White text for contrast */
+    border: 1px solid #ddd; /* Optional: Add border to rows */
+}
+
+/* Alternating row colours */
+tbody tr:nth-child(even) {
+    background-color: #444;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #555;
+}
+
+/* Set minimum height for rows to ensure good spacing */
+tbody tr {
+    min-height: 50px;
+}
+
+/* Headings style */
+thead th {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Add some padding around the entire table */
+.table-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Logo Banner Styling */
+.logo-banner {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Default layout is row for larger screens */
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #007bff; /* Change this to your preferred color */
+    color: white;
+    flex-wrap: wrap; /* Allows content to wrap when needed */
+    text-align: center;
+}
+
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    margin-bottom: 10px; /* Space below the logo */
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    max-height: 80px; /* Adjust logo size */
+}
+
+.banner-text {
+    flex: 2;
+    text-align: center;
+    padding: 10px;
+}
+
+.banner-text h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 1rem;
+}
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media screen and (max-width: 768px) {
+    .logo {
+        max-height: 60px; /* Smaller logo on mobile */
+    }
+
+    .banner-text h1 {
+        font-size: 1.5rem; /* Smaller header text on mobile */
+    }
+
+    .banner-text p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
+
+    .logo-banner {
+        flex-direction: column; /* Stack logo and text vertically on smaller screens */
+        justify-content: center; /* Center the content */
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .logo-container {
+        margin-bottom: 15px; /* Space between logo and text */
+    }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+    .logo-banner {
+        flex-direction: column; /* Stack logo and text vertically on smaller screens */
+        align-items: center; /* Center the content */
+    }
+
+    .logo-container {
+        margin-bottom: 20px; /* Space between logo and text */
+    }
+
+    .banner-text {
+        padding-top: 0; /* Remove extra space between logo and text */
+    }
+
+    .logo {
+        max-height: 50px; /* Even smaller logo for mobile */
+    }
+
+    .banner-text h1 {
+        font-size: 1.2rem; /* Further reduce text size */
+    }
+
+    .banner-text p {
+        font-size: 0.8rem; /* Adjust paragraph text for smaller screens */
+    }
+}
