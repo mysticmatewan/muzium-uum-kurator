@@ -107,6 +107,13 @@ header p {
 }
 
 /* Main Menu Styling */
+.main-menu p {
+    font-size: 1.8rem;
+	text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
 .main-menu h2 {
     font-size: 1.8rem;
 	text-align: center;
@@ -378,8 +385,8 @@ h2 {
 }
 
 label {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 2.0rem;
+    margin-bottom: 2px;
     color: #FFFFFF;
     display: block;
 }
